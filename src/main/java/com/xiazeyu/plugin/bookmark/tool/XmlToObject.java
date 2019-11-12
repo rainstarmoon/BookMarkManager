@@ -16,15 +16,14 @@ public class XmlToObject {
 
     static List<String> contextList;
 
-    static BookMarkRoot root;
-
     public static void init() {
         inputPath = "E:\\workspace_MySelf\\BookMarkManager\\demo\\bookmarks_2019_11_13.html";
+        inputPath = "E:\\workspace_MySelf\\BookMarkManager\\demo\\收藏20191113-005311.html";
         contextList = new ArrayList<>();
-        root = new BookMarkRoot();
     }
 
-    public static void transform() {
+    public static BookMarkRoot transform() {
+        BookMarkRoot root = new BookMarkRoot();
         int beginIndex = 0;
         FileUtil.inputJavaFile(inputPath, contextList);
         for (int i = beginIndex; i < contextList.size(); i++) {
@@ -39,6 +38,7 @@ public class XmlToObject {
         root.setH1(h1.get("VALUE").get(0));
         Map<String, List<String>> dl = LabelUtil.analysisLabel("DL", beginIndex + 3, contextList);
         root.setDl(transformDl(dl.get("VALUE")));
+        return root;
     }
 
     public static BookMarkDL transformDl(List<String> contextList) {

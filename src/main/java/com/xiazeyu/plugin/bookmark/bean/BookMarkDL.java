@@ -1,8 +1,6 @@
 package com.xiazeyu.plugin.bookmark.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +13,14 @@ import java.util.List;
  * </DL>
  * <DT><A HREF="" ADD_DATE="" ICON="">百度一下</A>
  */
-@Data
+@Getter
+@Setter
 public class BookMarkDL {
 
     /**
      * 文件夹标题
      */
-    private H3 h3;
+    private H3 h3 = new H3();
 
     /**
      * 子文件夹
@@ -39,6 +38,13 @@ public class BookMarkDL {
 
     public void addDt(BookMarkDT dt) {
         dts.add(dt);
+    }
+
+    @Override
+    public String toString() {
+        return "BookMarkDL{" +
+                "h3=" + h3.value +
+                '}';
     }
 
     @Data

@@ -1,15 +1,16 @@
 package com.xiazeyu.plugin.bookmark.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  * <DT><A></A>
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class BookMarkDT {
 
@@ -28,4 +29,10 @@ public class BookMarkDT {
         this.value = values != null ? values.get(0) : null;
     }
 
+    @Override
+    public String toString() {
+        return "BookMarkDT{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 }
