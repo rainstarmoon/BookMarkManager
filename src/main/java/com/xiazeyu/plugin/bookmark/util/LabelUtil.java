@@ -18,8 +18,8 @@ public class LabelUtil {
         if (labelBegin.length() > 0) {
             String[] keyValues = labelBegin.split(" ");
             for (String keyValue : keyValues) {
-                String[] split = keyValue.split("=");
-                result.put(split[0], Collections.singletonList(split[1]));
+                int i = keyValue.indexOf("=");
+                result.put(keyValue.substring(0, i), Collections.singletonList(keyValue.substring(i + 1)));
             }
         }
         List<String> value = new ArrayList<>();

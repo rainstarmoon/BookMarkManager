@@ -1,10 +1,7 @@
 package com.xiazeyu.plugin.bookmark.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 数据根
@@ -15,8 +12,9 @@ import java.util.List;
  *
  * </DL>
  */
-@Data
-public class BookMarkRoot {
+@Getter
+@Setter
+public class BookRoot {
 
     private String title;
 
@@ -24,7 +22,8 @@ public class BookMarkRoot {
 
     /**
      * 默认第一个是书签栏目录
+     * 没有标题
      */
-    private BookMarkDL dl;
+    private Folder folder;
 
 }
